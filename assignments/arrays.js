@@ -57,9 +57,9 @@ let inventory = [
 
 // Example for loop:
 
-// arr = [1,2,3,4];
+// arr = [ 1, 2, 3, 4 ];
 // for (let i = 0; i < arr.length; i++) {
-//     arr[i]; // 1,2,3,4
+// 	arr[i]; // 1,2,3,4
 // }
 
 // ==== Challenge 1 ====
@@ -76,20 +76,24 @@ console.log('The last car is a', lastCar['car_make'], lastCar['car_model']);
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
 
-let carModels = [];
-for (let x = 0; x < inventory.length; x++) {
-	carModels.push(inventory[x]['car_model']);
-}
-carModels.sort();
+let carModels = inventory.map((model) => model.car_model).sort();
+
+// for (let x = 0; x < inventory.length; x++) {
+// 	carModels.push(inventory[x]['car_model']);
+// }
+// carModels.sort();
+
 console.log(carModels);
 
-// ==== Challenge 4 ====
-// The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
+// // ==== Challenge 4 ====
+// // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
 
-let carYears = [];
-for (let x = 0; x < inventory.length; x++) {
-	carYears.push(inventory[x]['car_year']);
-}
+let carYears = inventory.map((year) => year.car_year).sort();
+
+// for (let x = 0; x < inventory.length; x++) {
+// 	carYears.push(inventory[x].car_year);
+// }
+
 console.log(carYears);
 
 // ==== Challenge 5 ====
@@ -107,12 +111,8 @@ console.log(oldCars);
 // A buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
 
 let BMWAndAudi = [];
-console.log();
-
-let BMWAndAudi = [];
 for (let x = 0; x < inventory.length; x++) {
-	let BMWAudicarmake = inventory[x]['car_make'];
-	if (BMWAudicarmake === 'BMW' || BMWAudicarmake === 'Audi') {
+	if (inventory[x].car_make === 'BMW' || inventory[x].car_make === 'Audi') {
 		BMWAndAudi.push(inventory[x]);
 	}
 }
